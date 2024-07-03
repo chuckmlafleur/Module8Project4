@@ -1,14 +1,22 @@
-function drawTriangle(triangleSize) {
-    for (let i = 1; i <= triangleSize; i++) {
-        let line = '';
-        for (let j = 0; j < i; j++) {
-            line += '*';
+function sortEvens(numArray) {
+    let evenNumbers = [];
+
+    for (let num of numArray) {
+        if (num % 2 === 0) {
+            evenNumbers.push(num);
         }
-        console.log(line);
-    }   
+    }
+
+    evenNumbers.sort((a, b) => a - b);
+
+    return evenNumbers;
 }
-console.log("Testing drawTriangle()...");
-// TODO: Test drawTriangle() with different arguments
-drawTriangle(4);
-// Do NOT remove the following line
-export default drawTriangle;
+
+console.log("Testing sortEvens()...");
+let nums = [4, 2, 9, 1, 8];
+let evenNums = sortEvens(nums);
+console.log(evenNums);
+
+
+// Do NOT remove the following line:
+export default sortEvens;
